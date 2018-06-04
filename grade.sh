@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+if [ -d pytest_utils ]; then
+    cd pytest_utils
+    git pull origin master
+    pip3 install -e .
+    cd ..
+else 
+    git clone https://github.com/ucsb-gradescope-tools/pytest_utils.git
+    cd pytest_utils
+    pip3 install -e .
+    cd ..
+fi
+
 # Set up autograder files
 
 EXPECTED_FILES="labxx.py"
@@ -41,7 +53,7 @@ for f in $EXPECTED_FILES; do
 done
 
 rm -f results.json
-python3 run_tests.py > results.json
+python3 -m pytest run_tests.py 
 
 if [ -d /autograder/results ]; then
     cp -v results.json /autograder/results

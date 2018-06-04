@@ -1,9 +1,11 @@
-# sample-python-unittest-autograder
+# sample-python-pytest-autograder
 
-A simple Gradescope autograder for Python based on `unittest` test cases.
+A simple Gradescope autograder for Python based on `pytest` test cases.
 
-This repo is designed to be used in conjunction with the 
-[link-gs-zip-with-repo](https://github.com/ucsb-gradescope-tools/link-gs-zip-with-repo) tool.
+This repo is designed to be used in conjunction with
+
+* the  [link-gs-zip-with-repo](https://github.com/ucsb-gradescope-tools/link-gs-zip-with-repo) tool.
+* the [pytest_utils](https://github.com/ucsb-gradescope-tools/pytest_utils) repo, which is a port of the Gradescope decorator for unittest over to pytest (by Caitlin Scarberry).
 
 The [link-gs-zip-with-repo](https://github.com/ucsb-gradescope-tools/link-gs-zip-with-repo)
 allows you to easily link a Gradescope autograded assigment with a github repo.  You only have to create
@@ -19,7 +21,7 @@ to a github repo.
 *  `cd` into that directory:
    > `cd PRIVATE-cs8-s18-labxx-gs`
 * Add a remote for this sample repo via: 
-   > `git remote add template git@github.com:ucsb-gradescope-tools/sample-python-unittest-autograder.git`
+   > `git remote add template git@github.com:ucsb-gradescope-tools/sample-python-pytest-autograder.git`
 * Pull from this sample repo via `git pull template master`
 * Push to origin with `git push origin master`
 
@@ -72,14 +74,5 @@ You are now ready to test your autograded assignment.
    
 # Decorator reference
 
-As quick reference, here are examples of the decorators you can use on `unittest` tests:
-   
-* `@weight(5.0)` (parameter is of type float; represents number of points)
-* `@tags("conditionals", "recursion")` (parameters are strings)
-* `@visibility("after_due_date")` Legal values are explained [in Gradescope's documentation](https://gradescope-autograders.readthedocs.io/en/latest/specs/#controlling-test-case-visibility)
-   * `"hidden"`
-   * `"after_due_date"`
-   * `"after_published"`
-   * `"visible"` (default).  
-   
+See: <https://github.com/ucsb-gradescope-tools/pytest_utils>   
    
