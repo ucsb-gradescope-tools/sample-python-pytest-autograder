@@ -33,10 +33,8 @@ to a github repo.
    If you prefer *all* files to be copied in, edit the `grade.sh` script to copy all files from `/autograder/submission` into
    the target directory.
    
-* In EXECUTION-FILES, under the directory `tests`, edit the file given so that it contains the unit tests that you want to be used as a basis
-   for the student's graded.   Use the decorators from the Gradescope 
-   provided module 
-   [autograder_utils](https://github.com/gradescope/gradescope-utils/tree/master/gradescope_utils/autograder_utils).  (Quick reference below.)
+* In EXECUTION-FILES, edit the file run_tests.py given so that it contains the unit tests that you want to be used as a basis
+   for the student's grade.   Use the decorators from the [pytest_utils](https://github.com/ucsb-gradescope-tools/pytest_utils) repo.
 
    If converting from submit.cs, put any files that were under EXECUTION-FILES on submit.cs that are needed
    for your tests.
